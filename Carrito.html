@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>   
+    <link rel="stylesheet" href="Estilos/styles.css">
+    <link rel="shortcut icon" href="Imagenes/logo.ico" type="image/x-icon">
+    <title>Campus Shop</title> 
+</head>
+<body>
+    <!--menu-->
+    <nav class="navbar navbar-expand-lg fondo-nav sticky-top" style="background-color: rgba(24, 30, 187, 0.897);" id="menu-navegacion">
+      <div class="container-fluid my-1">
+        <a class="navbar-brand" href="index.html" style="margin-left: 11px;">
+          <img src="Imagenes/logo.ico" height="50" class="d-inline-block align-text-top">            
+        </a>
+          <!--Barra de navegacion-->
+          <nav class="navbar navbar-expand-lg">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#"></a>
+                <button class="navbar-toggler" style="background-color: rgba(194, 201, 255, 0.599);" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="Carrito.html">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="about.html">Sobre Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="index.html">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="Carrito.html">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                              <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                            </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+      </div>
+  </nav>
+  <!--Botones filtro-->
+  <div class="text-center my-3 ">
+    <button class="btn btn-light shadow p-3 mb-5 bg-body-tertiary rounded" onclick="ordenarPorPrecio()">Ordenar Por Precio</button>
+    <button class="btn btn-light shadow p-3 mb-5 bg-body-tertiary rounded" onclick="ordenarPorNombre()">Ordenar Por Nombre</button>
+  </div>
+  <!--Productos-->
+  <h1 class="text-center">Productos disponibles</h1>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+      <div class="card h-100" style="background: rgb(199, 201, 234);">
+        <img src="Imagenes/mochila.jpg" class="card-img-top" alt="Mochila Ultra Cool">
+        <div class="card-body">
+          <h5 class="card-title" style="text-align: center;">Mochila Ultra Cool</h5>
+          <p class="card-text text-center">¡Lleva tu estilo al siguiente nivel con esta increible mochila!</p>
+          <p class="card-text" style="text-align: center;" id="precio"><small class="text-body-secondary">$185000</small></p>
+          <div class="d-grid gap-2">
+            <button class="btn btn-primary" onclick="agregarAlCarrito('Mochila Ultra Cool', 185000)">Agregar al Carrito</button>            
+          </div>          
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100" style="background: rgb(199, 201, 234);">
+        <img src="Imagenes/Lapices.jpg" class="card-img-top" alt="Lápices Mágicos">
+        <div class="card-body">
+          <h5 class="card-title" style="text-align: center;">Lápices Mágicos</h5>
+          <p class="card-text text-center">Escribe, dibuja y crea magia con estos lapices.</p>
+          <p class="card-text" style="text-align: center;" id="precio"><small class="text-body-secondary">$18500</small></p>
+          <div class="d-grid gap-2">
+            <button class="btn btn-primary" onclick="agregarAlCarrito('Lápices Mágicos', 18500)">Agregar al Carrito</button>            
+          </div>          
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100" style="background: rgb(199, 201, 234);">
+        <img src="Imagenes/marcadores de colores.jpg" class="card-img-top" alt="Marcadores Diversión">
+        <div class="card-body">
+          <h5 class="card-title" style="text-align: center;">Marcadores Diversión</h5>
+          <p class="card-text text-center">Dale color a tus sueños con cada marcador.</p>
+          <p class="card-text" style="text-align: center;" id="precio"><small class="text-body-secondary">$33500</small></p>
+          <div class="d-grid gap-2">
+            <button class="btn btn-primary" onclick="agregarAlCarrito('Marcadores Diversión', 33500)">Agregar al Carrito</button>            
+          </div>          
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100" style="background: rgb(199, 201, 234);">
+        <img src="Imagenes/boligrafos.jpg" class="card-img-top" alt="Bolígrafo infinito">
+        <div class="card-body">
+          <h5 class="card-title" style="text-align: center;">Bóligrafo infinito</h5>
+          <p class="card-text text-center">Nunca más te quedes sin tinta, ¡escribe hasta el infinito!</p>
+          <p class="card-text" style="text-align: center;" id="precio"><small class="text-body-secondary">$8500</small></p>
+          <div class="d-grid gap-2">
+            <button class="btn btn-primary" onclick="agregarAlCarrito('Bolígrafo infinito', 8500)">Agregar al Carrito</button>            
+          </div>          
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100" style="background: rgb(199, 201, 234);">
+        <img src="Imagenes/cartuchera.jpg" class="card-img-top" alt="Cartuchera en mano">
+        <div class="card-body">
+          <h5 class="card-title" style="text-align: center;">Cartuchera en mano</h5>
+          <p class="card-text text-center">¡Haz que tus utlies se pongan en fila!</p>
+          <p class="card-text" style="text-align: center;" id="precio"><small class="text-body-secondary">$15000</small></p>
+          <div class="d-grid gap-2">
+            <button class="btn btn-primary" onclick="agregarAlCarrito('Cartuchera en mano', 15000)">Agregar al Carrito</button>            
+          </div>          
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100" style="background: rgb(199, 201, 234);">
+        <img src="Imagenes/pinturas acrilicas.jpg" class="card-img-top" alt="Pinturas acrilicas Vibrantes">
+        <div class="card-body">
+          <h5 class="card-title" style="text-align: center;">Pinturas Acrílicas Vibrantes</h5>
+          <p class="card-text text-center">Desde el primer trazo ¡Tu arte nunca fue tan brillante!</p>
+          <p class="card-text" style="text-align: center;" id="precio"><small class="text-body-secondary">$12400</small></p>
+          <div class="d-grid gap-2">
+            <button class="btn btn-primary" onclick="agregarAlCarrito('Pinturas Acrílicas Vibrantes', 12400)">Agregar al Carrito</button>            
+          </div>          
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100" style="background: rgb(199, 201, 234);">
+        <img src="Imagenes/cuadernos u.jpg" class="card-img-top" alt="Cuaderno de Aventuras">
+        <div class="card-body">
+          <h5 class="card-title" style="text-align: center;">Cuadernos de Aventuras</h5>
+          <p class="card-text text-center">¡Anota tus ideas brillantes en este cuaderno lleno de sorpresas!</p>
+          <p class="card-text" style="text-align: center;" id="precio"><small class="text-body-secondary">$19000</small></p>
+          <div class="d-grid gap-2">
+            <button class="btn btn-primary" onclick="agregarAlCarrito('Cuadernos de Aventuras', 19000)">Agregar al Carrito</button>            
+          </div>          
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100" style="background: rgb(199, 201, 234);">
+        <img src="Imagenes/libretas.jpg" class="card-img-top" alt="Libretas que Inspiran">
+        <div class="card-body">
+          <h5 class="card-title" style="text-align: center;">Libretas que Inspiran</h5>
+          <p class="card-text text-center">Cada página es una nueva aventura por contar ¡mil historias por escribir!</p>
+          <p class="card-text" style="text-align: center;" id="precio"><small class="text-body-secondary">$1900</small></p>
+          <div class="d-grid gap-2">
+            <button class="btn btn-primary" onclick="agregarAlCarrito('Libretas que Inspiran', 1900)">Agregar al Carrito</button>            
+          </div>          
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100" style="background: rgb(199, 201, 234);">
+        <img src="Imagenes/rotuladores.jpg" class="card-img-top" alt="Rotuladores Eternos">
+        <div class="card-body">
+          <h5 class="card-title" style="text-align: center;">Rotuladores Eternos</h5>
+          <p class="card-text text-center">Tu mensaje, eterno como la tinta ¡Porque lo que escribes debe durar!</p>
+          <p class="card-text" style="text-align: center;" id="precio"><small class="text-body-secondary">$4600</small></p>
+          <div class="d-grid gap-2">
+            <button class="btn btn-primary" onclick="agregarAlCarrito('Rotuladores Eternos', 4600)">Agregar al Carrito</button>            
+          </div>          
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100" style="background: rgb(199, 201, 234);">
+        <img src="Imagenes/diccionarios.jpg" class="card-img-top" alt="Diccionarios que marcan estilo">
+        <div class="card-body">
+          <h5 class="card-title" style="text-align: center;">Diccionarios que marcan estilo</h5>
+          <p class="card-text text-center">Descubre los diccionarios que te haran brillar en tu clase.</p>
+          <p class="card-text" style="text-align: center;" id="precio"><small class="text-body-secondary">$23000</small></p>
+          <div class="d-grid gap-2">
+            <button class="btn btn-primary" onclick="agregarAlCarrito('Diccionarios que marcan estilo', 23000)">Agregar al Carrito</button>            
+          </div>          
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100" style="background: rgb(199, 201, 234);">
+        <img src="Imagenes/pinceles.jpg" class="card-img-top" alt="Pincel Perfecto">
+        <div class="card-body">
+          <h5 class="card-title" style="text-align: center;">Pincel Perfecto</h5>
+          <p class="card-text text-center">La herramienta de los artistas ¡El arte comienza con el pincel adecuado!.</p>
+          <p class="card-text" style="text-align: center;" id="precio"><small class="text-body-secondary">$2300</small></p>
+          <div class="d-grid gap-2">
+            <button class="btn btn-primary" onclick="agregarAlCarrito('Pincel Perfecto', 2300)">Agregar al Carrito</button>            
+          </div>          
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100" style="background: rgb(199, 201, 234);">
+        <img src="Imagenes/regla.jpg" class="card-img-top" alt="Regla de Poder">
+        <div class="card-body">
+          <h5 class="card-title" style="text-align: center;">Regla de Poder</h5>
+          <p class="card-text text-center">Mide tus sueños y hazlos realidad con esta épica regla</p>
+          <p class="card-text" style="text-align: center;" id="precio"><small class="text-body-secondary">$5000</small></p>
+          <div class="d-grid gap-2">
+            <button class="btn btn-primary" onclick="agregarAlCarrito('Regla de Poder', 5000)">Agregar al Carrito</button>            
+          </div>          
+        </div>
+      </div>
+    </div>
+  </div>  
+<hr>
+  <!--Agregar a la lista-->
+  <section class="container-fluid" id="Lista-Compras">
+    <h1><strong>Lista de Compras</strong></h1>
+    <h2 class="mt-1" id="carrito-items"></h2>
+    <div id="carrito-items" class="cart-items">
+        <p>Aún no has agregado productos al carrito.</p>
+    </div>
+    <h3>Total: $<span id="total">0.00</span></h3>
+
+  </section>
+  
+
+<script src="script/script.js"></script>
+
+  
+</body>
+</html>
