@@ -12,14 +12,21 @@ let carrito = [];
 
 // Función para agregar productos al carrito
 function agregarAlCarrito(nombre, precio) {
-  carrito.push({ nombre, precio, cantidad: 1});
+  const ProductoExistente = carrito.find (producto => producto.nombre === nombre);
+
+  if (ProductoExistente){
+    ProductoExistente.cantidad++;
+  } else {
+    carrito.push({nombre, precio, cantidad: 1});
+  }
   actualizarCarrito();
+
 }
 
 // Función para actualizar el contenido del carrito
 function actualizarCarrito() {
   const carritoItems = document.getElementById('carrito-items');
-  // Limpiamos el contenido del carrito
+
   carritoItems.innerHTML = '';
 
   let total = 0;
